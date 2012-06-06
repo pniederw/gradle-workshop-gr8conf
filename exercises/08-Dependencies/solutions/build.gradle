@@ -1,0 +1,22 @@
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    myDeps
+}
+
+dependencies {
+    myDeps 'org.apache.httpcomponents:httpclient:4.0.3'
+}
+
+task showDeps {
+    doLast {
+        configurations.myDeps.each { println it }
+    }
+}
+
+task copyDeps(type: Copy) {
+    from configurations.myDeps
+    into "$buildDir/deps"
+}

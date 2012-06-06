@@ -1,0 +1,17 @@
+println 'top level 1'
+
+task hello {
+    doLast {
+        println 'Hello World'
+    }
+}
+
+task date {
+    dependsOn hello
+    println 'date configuration'
+    doLast {
+        println new Date()
+    }
+}
+
+println 'top level 2'

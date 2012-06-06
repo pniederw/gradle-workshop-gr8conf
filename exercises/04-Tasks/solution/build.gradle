@@ -1,0 +1,11 @@
+task hello {
+    doLast {
+        println 'hello world'
+    }
+}
+
+task date {
+    doLast {
+        println new Date()
+    }
+}
